@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head th:replace="fragments/header :: common-header">   
+</head>
+<body>
+
+	<header>
+		<h1> All Lanes</h1>
+	
+	</header>
+	
+	<table class = "table table-bordered table-striped">
+		<thead class = "thead-dark">
+			<tr>
+				<th scope = "col"> Lane Number</th>
+				<th scope = "col"> Shipping City</th>
+				<th scope = "col"> Shipping State</th>
+				<th scope = "col"> Receiving City</th>
+				<th scope = "col"> Receiving State</th>
+				<th scope = "col"> Commodity</th>
+				<th scope = "col"> Volume</th>
+				<th scope = "col"> Equipment</th>
+				
+			
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:if ="${Lanes.empty}">
+				<td colspan = "2"> no lanes yet</td>
+			</tr>
+		
+			<tr th:each = "lane:${Lanes}">
+				<td th:text = "${lane.id}"></td>
+				<td th:text = "${lane.shippingCity}"></td>
+				<td th:text = "${lane.shippingState}"></td>
+				<td th:text = "${lane.receivingCity}"></td>
+				<td th:text = "${lane.receivingState}"></td>
+				<td th:text = "${lane.commodity}"></td>
+				<td th:text = "${lane.volume}"></td>
+				<td th:text = "${lane.equipment}"></td>
+			</tr>
+		</tbody>
+	
+	
+	</table>
+</body>
+</html>
