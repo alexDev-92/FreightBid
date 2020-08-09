@@ -3,6 +3,8 @@ package depaul.edu.FreightBid.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -17,6 +19,7 @@ public class Carrier implements Serializable{
 
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String name;
@@ -33,7 +36,7 @@ public class Carrier implements Serializable{
 	
 	private String primaryEmail;
 	
-	@OneToMany
+	//@OneToMany
 	private Lane lane;
 	
 	

@@ -31,7 +31,7 @@ public class Lane implements Serializable{
 	
 	private String equipment;
 	
-	@OneToOne(cascade =CascadeType.ALL)
+	//@OneToOne(cascade =CascadeType.ALL)
 	private Carrier carrier;
 	
 	
