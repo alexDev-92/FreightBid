@@ -2,15 +2,17 @@ package depaul.edu.FreightBid.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
 @Entity
 @Data
 public class Lane implements Serializable{
-	private static final long serialVersionUID = 1;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private long id;
@@ -28,6 +30,9 @@ public class Lane implements Serializable{
 	private int volume;
 	
 	private String equipment;
+	
+	@OneToOne(cascade =CascadeType.ALL)
+	private Carrier carrier;
 	
 	
 }
