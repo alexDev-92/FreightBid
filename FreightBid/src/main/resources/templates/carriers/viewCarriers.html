@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head th:replace="fragments/header :: common-header">   
+</head>
+<body>
+
+	<header>
+		<h1> All Carriers</h1>
+	
+	</header>
+	
+	<table class = "table table-bordered table-striped">
+		<thead class = "thead-dark">
+			<tr>
+				<th scope = "col"> Carrier Number</th>
+				<th scope = "col"> Carrier Name</th>
+				<th scope = "col"> MC</th>
+				<th scope = "col"> DOT</th>
+				<th scope = "col"> Entity Type</th>
+				<th scope = "col"> Contact First Name</th>
+				<th scope = "col"> Contact Last Name</th>
+				<th scope = "col"> Email</th>
+				
+			
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:if ="${carriers.empty}">
+				<td colspan = "2"> no carriers yet</td>
+			</tr>
+		
+			<tr th:each = "carrier:${carriers}">
+				<td th:text = "${carrier.id}"></td>
+				<td th:text = "${carrier.name}"></td>
+				<td th:text = "${carrier.MC}"></td>
+				<td th:text = "${carrier.DOT}"></td>
+				<td th:text = "${carrier.entityType}"></td>
+				<td th:text = "${carrier.primaryFirstName}"></td>
+				<td th:text = "${carrier.primaryLastName}"></td>
+				<td th:text = "${carrier.primaryEmail}"></td>
+			</tr>
+		</tbody>
+	
+	
+	</table>
+	
+	<a class="btn btn-lg btn-primary" th:href="@{/freightBid/Carriers?addCarrier}"> Add Carrier </a>
+	
+	
+</body>
+</html>

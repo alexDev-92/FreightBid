@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: common-header">
+
+</head>
+<body>
+	<header>
+		<h1 class = "display-4"> Add Carrier</h1>
+	
+	</header>
+	
+	<div class = "container">
+	
+		<form action="#" th:action = "@{/freightBid/Carriers}" th:object = "${newCarrier}" method = "post"> 
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >Carrier Name </label>
+					<input type = "text" class= form-control th:field = "*{name}" placeholder = "name" >
+				
+				</div>		
+			</div>
+			
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >MC Number </label>
+					<input type = "text" class= form-control th:field = "*{MC}" placeholder = "MC" >
+				
+				</div>		
+			</div>
+			
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >DOT </label>
+					<input type = "text" class= form-control th:field = "*{DOT}" placeholder = "DOT" >
+				
+				</div>		
+			</div>
+			
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >Entity Type </label>
+					<input type = "text" class= form-control th:field = "*{entityType}" placeholder = "Entity" >
+				
+				</div>		
+			</div>
+			
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >First Name </label>
+					<input type = "text" class= form-control th:field = "*{primaryFirstName}" placeholder = "First name" >
+				
+				</div>		
+			</div>
+			
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >Last Name </label>
+					<input type = "text" class= form-control th:field = "*{primaryLastName}" placeholder = "Last Name" >
+				
+				</div>		
+			</div>
+			
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >Email </label>
+					<input type = "text" class= form-control th:field = "*{primaryEmail}" placeholder = "Email" >
+				
+				</div>		
+			</div>
+
+			<button type = "submit" class = "btn btn-lg btn-primary"> Submit </button>
+			<a class = "btn btn-lg btn-warning" th:ref = "@{/freightBid/Carriers}"> Cancel </a>
+			
+		
+		</form>
+	
+	
+	</div>
+
+</body>
+</html>
