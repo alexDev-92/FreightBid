@@ -166,8 +166,16 @@
 			<div class = "row form-group">
 				<div clas = "col-lg-6">
 					<label for= "name" >Equipment </label>
-					<input type = "text" class= form-control th:field = "*{equipment}" placeholder = "Equipment" >
-				
+					<select id = "text" class= form-control th:field = "*{equipment}" placeholder = "Equipment" >
+						<option value="Reefer">Reefer</option>
+						<option value="Van">Van</option>
+						<option value="Van or Reefer">Van or Reefer</option>
+						<option value="Flatbed">Flatbed</option>
+						<option value="53' Container">53' Container</option>
+						<option value="48' Container">48' Container</option>
+						
+					
+					</select>
 				</div>		
 			</div>
 
