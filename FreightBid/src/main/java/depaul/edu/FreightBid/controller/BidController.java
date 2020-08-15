@@ -1,5 +1,6 @@
 package depaul.edu.FreightBid.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,7 @@ import depaul.edu.FreightBid.model.BidRepository;
 @RequestMapping("freightBid/bids")
 public class BidController {
 	
+	@Autowired
 	BidRepository bidRepo;
 	
 	@GetMapping

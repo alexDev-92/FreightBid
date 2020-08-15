@@ -18,7 +18,7 @@ public class Bid implements Serializable{
 	private long id;
 	
 	
-	private int amount;
+	private int rate;
 	
 	private Carrier carrier;
 	

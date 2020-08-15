@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: common-header">
+
+</head>
+<body>
+	<header>
+		<h1 class = "display-4"> Add Bid</h1>
+	
+	</header>
+	
+	<div class = "container">
+	
+		<form action="#" th:action = "@{/freightBid/bid}" th:object = "${bid}" method = "post"> 
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >Carrier Name </label>
+					<input type = "text" class= form-control th:field = "*{carrier.name}" placeholder = "name" >
+				
+				</div>		
+
+				<div class = "col-lg-6">
+					<label for= "name" >MC Number </label>
+					<input type = "text" class= form-control th:field = "*{carrier.MC}" placeholder = "MC" >
+				
+				</div>		
+			</div>
+			
+			
+			<div class = "row form-group">
+				<div class = "col-lg-6">
+					<label for= "name" >Rate $ </label>
+					<input type = "text" class= form-control th:field = "*{rate}" placeholder = "$" >
+				
+				</div>	
+				
+			
+			</div>
+			
+			
+			
+			
+			
+			
+
+
+			<button type = "submit" class = "btn btn-lg btn-primary"> Submit </button>
+			<a class = "btn btn-lg btn-warning" th:ref = "@{/freightBid/lanes}"> Cancel </a>
+			
+		
+		</form>
+	
+	
+	</div>
+
+</body>
+</html>
