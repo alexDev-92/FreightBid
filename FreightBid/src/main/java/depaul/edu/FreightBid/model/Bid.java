@@ -2,8 +2,10 @@ package depaul.edu.FreightBid.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -22,6 +24,7 @@ public class Bid implements Serializable{
 	
 	private Carrier carrier;
 	
+	@ManyToOne(cascade= CascadeType.ALL)
 	private Lane lane;
 
 }

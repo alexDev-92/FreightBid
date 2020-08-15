@@ -1,7 +1,10 @@
 package depaul.edu.FreightBid.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,8 +39,8 @@ public class Carrier implements Serializable{
 	
 	private String primaryEmail;
 	
-	//@OneToMany
-	private Lane lane;
+	@OneToMany(cascade= CascadeType.ALL)
+	private Collection<Bid> bids = new ArrayList<>();
 	
 	
 }

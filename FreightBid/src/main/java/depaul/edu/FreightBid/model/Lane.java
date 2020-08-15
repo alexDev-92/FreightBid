@@ -1,12 +1,15 @@
 package depaul.edu.FreightBid.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import lombok.Data;
@@ -34,6 +37,8 @@ public class Lane implements Serializable{
 	
 	private String equipment;
 	
+	@OneToMany(cascade= CascadeType.ALL)
+	private Collection<Bid> bids = new ArrayList<>();
 
 	
 	
