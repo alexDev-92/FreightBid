@@ -1,14 +1,18 @@
 package depaul.edu.FreightBid.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import depaul.edu.FreightBid.model.Bid;
 import depaul.edu.FreightBid.model.Lane;
 import depaul.edu.FreightBid.model.LaneRepository;
 import depaul.edu.FreightBid.service.LaneService;
@@ -51,6 +55,20 @@ public class FreightBidController {
 		return "redirect:/freightBid/lanes";
 		
 		
+		
+	}
+	
+	@GetMapping("freightBid/lanes/laneBids/{id}")
+	public String getLaneBids(@PathVariable(value = "id")Long id, Model model) {
+		Lane lane = laneService.getLane(id);
+		if(lane != null) {
+			List <Bid> bids = laneService.getLaneBids(lane);
+			model.addAttribute("bids",bids);
+			
+			
+		}
+		
+		return "/bids/viewBids";
 		
 	}
 		

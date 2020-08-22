@@ -39,7 +39,7 @@ public class BidController {
 		if(binding.hasErrors()) {
 			return "bids/addBid";
 		}
-		
+		//TODO:issue creating bid
 		bidRepo.save(bid);
 		
 		return "redirect:/freightBid/bids";

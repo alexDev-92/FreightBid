@@ -40,6 +40,10 @@
 				<td th:text = "${lane.commodity}"></td>
 				<td th:text = "${lane.volume}"></td>
 				<td th:text = "${lane.equipment}"></td>
+				<td>
+					<button type="button" class="btn btn-outline-primary"><a href="#" th:href="@{'/freightBid/lanes/laneBids/' + ${lane.id}}">View Bids</a></button>
+                    <button type="button" class="btn btn-outline-danger"><a href="#" th:href="@{'/freightBid/bids?addBid'}">Add Bid</a></button>
+            	</td>
 			</tr>
 		</tbody>
 	

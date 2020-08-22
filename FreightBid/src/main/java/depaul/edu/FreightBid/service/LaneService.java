@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import depaul.edu.FreightBid.model.Bid;
 import depaul.edu.FreightBid.model.Lane;
 import depaul.edu.FreightBid.model.LaneRepository;
 
@@ -36,7 +37,17 @@ public class LaneService {
 		laneRepo.delete(lane);
 	}
 	
-
+	public List <Bid> getLaneBids(Lane lane){
+		List <Bid> bids = new ArrayList<>();
+		
+		laneRepo.findById(lane.getId()).get().getBids().forEach(bids::add);
+		return bids;
+	}
+	
+	
+	public Lane getLane(Long id) {
+		return laneRepo.findById(id).get();
+	}
 	
 	
 
