@@ -6,6 +6,7 @@ receiving_city VARCHAR(250),
 receiving_state VARCHAR(250),
 commodity VARCHAR(250),
 volume BIGINT,
+equipment VARCHAR(250),
 bid_id BIGINT,
 PRIMARY KEY(lane_id)
 
