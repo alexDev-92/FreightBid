@@ -1,0 +1,1 @@
+alter table carriers add carriers_bidding long;

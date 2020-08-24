@@ -13,11 +13,19 @@
 	
 		<form action="#" th:action = "@{/freightBid/bids}" th:object = "${bid}" method = "post"> 
 			<div class = "row form-group">
-				<div class = "col-lg-6">
-					<label for= "name" >Carrier Name </label>
-					<input type = "text" class= form-control th:field = "*{carrier.name}" placeholder = "name" >
-				
+				<!-- <div class = "col-lg-6">-->
+				<div class="col-lg-3" th:object="${carriers}">
+					<label for= "name" >Carrier Name </label>			
+					<!-- <select th:field = "*{carriers}">-->
+					<select class="form-control" id="carriersBidding" name="carriersBidding">
+					<option value ="">Select Carrier </option>
+					<option th:each = "carrier : ${carriers}" 
+						th:value = "${carrier.id}" 
+						th:text = "${carrier.name}"> </option>				
+					</select>
+
 				</div>		
+				
 
 				<div class = "col-lg-6">
 					<label for= "name" >MC Number </label>

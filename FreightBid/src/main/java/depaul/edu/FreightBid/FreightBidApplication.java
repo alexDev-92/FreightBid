@@ -14,4 +14,3 @@ public class FreightBidApplication {
 
 
 
-//TODO : create BIDS table

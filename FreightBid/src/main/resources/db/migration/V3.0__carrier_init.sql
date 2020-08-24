@@ -7,5 +7,6 @@ entity_type varchar(100),
 primary_first_name varchar(100),
 primary_last_name varchar(100),
 primary_email varchar(100),
-bid_id bigint
+bid_id long,
+lane_id long
 );

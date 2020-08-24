@@ -1,5 +1,7 @@
 package depaul.edu.FreightBid.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import depaul.edu.FreightBid.model.Bid;
 import depaul.edu.FreightBid.model.BidRepository;
+import depaul.edu.FreightBid.model.Carrier;
+import depaul.edu.FreightBid.model.CarrierRepository;
 
 @Controller
 @RequestMapping("freightBid/bids")
 public class BidController {
+	
+	@Autowired
+	CarrierRepository carrierRepo;
 	
 	@Autowired
 	BidRepository bidRepo;
@@ -28,6 +35,9 @@ public class BidController {
 	
 	@RequestMapping(params = "addBid")
 	public String addBid(Model model) {
+		
+		List<Carrier> carriers = carrierRepo.findAll();
+		model.addAttribute("carriers", carriers);
 		
 		model.addAttribute("bid", new Bid());
 		return "bids/addBid";

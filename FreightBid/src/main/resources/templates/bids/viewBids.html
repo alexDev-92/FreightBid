@@ -13,7 +13,7 @@
 	<table class = "table table-bordered table-striped">
 		<thead class = "thead-dark">
 			<tr>
-				<th scope = "col"> Lane Number</th>
+				<!-- <th scope = "col"> Lane Number</th>-->
 				<th scope = "col"> Carrier Name</th>
 				<th scope = "col"> Carrier MC</th>
 				<th scope = "col"> Rate $</th>
@@ -26,11 +26,11 @@
 		
 		<tbody>
 			<tr th:if ="${bids.empty}">
-				<td colspan = "2"> no lanes yet</td>
+				<td colspan = "2"> no bids yet</td>
 			</tr>
 		
 			<tr th:each = "bid:${bids}">
-				<td th:text = "${lane.id}"></td>
+				<!-- <td th:text = "${lane.id}"></td>-->
 				<td th:text = "${carrier.name}"></td>
 				<td th:text = "${carrier.MC}"></td>
 				<td th:text = "${bid.rate}"></td>

@@ -28,7 +28,7 @@ public class Lane implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "lane_id")
+	@Column(name = "lane_id", nullable = false)
 	private long id;
 	
 	@Column(name = "shipping_city")
@@ -62,7 +62,8 @@ public class Lane implements Serializable{
 	//private Bid bids;
 	
 	
-	//@OneToOne
-	//private Carrier carrier;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name  = "carrier_id")
+	private Carrier carrier;
 	
 }

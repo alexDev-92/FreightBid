@@ -7,7 +7,8 @@ receiving_state VARCHAR(250),
 commodity VARCHAR(250),
 volume BIGINT,
 equipment VARCHAR(250),
-bid_id BIGINT,
+bid_id long,
+carrier_id long,
 PRIMARY KEY(lane_id)
 
 );
