@@ -72,7 +72,7 @@ public class Carrier implements Serializable{
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "carriers_bidding", nullable = false)
+	@JoinColumn(name = "carriers_bidding")
 	@JsonIgnore
 	private Bid carriersBidding;
 	

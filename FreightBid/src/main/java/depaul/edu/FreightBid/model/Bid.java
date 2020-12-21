@@ -37,7 +37,7 @@ public class Bid implements Serializable{
 	private int rate;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "carrier_id" , nullable = false)
+	@JoinColumn(name = "carrier_id" )
 	@JsonIgnore
 	private Carrier carrier;
 	
@@ -52,7 +52,7 @@ public class Bid implements Serializable{
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "lane_id", nullable = false)
+	@JoinColumn(name = "lane_id")
 	@JsonIgnore
 	private Lane lane;
 

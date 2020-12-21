@@ -16,8 +16,8 @@
 				<!-- <div class = "col-lg-6">-->
 				<div class="col-lg-3" th:object="${carriers}">
 					<label for= "name" >Carrier Name </label>			
-					<!-- <select th:field = "*{carriers}">-->
-					<select class="form-control" id="carriersBidding" name="carriersBidding">
+					<!--<select th:field = "*{bid.carrier}" class="form-control">	 this one does not work -->				
+					<select class="form-control" id="carriersBidding" name="carriersBidding" ><!-- this one works-->
 					<option value ="">Select Carrier </option>
 					<option th:each = "carrier : ${carriers}" 
 						th:value = "${carrier.id}" 
@@ -25,13 +25,7 @@
 					</select>
 
 				</div>		
-				
-
-				<div class = "col-lg-6">
-					<label for= "name" >MC Number </label>
-					<input type = "text" class= form-control th:field = "*{carrier.MC}" placeholder = "MC" >
-				
-				</div>		
+						
 			</div>
 			
 			

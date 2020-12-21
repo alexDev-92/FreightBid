@@ -15,6 +15,7 @@ import depaul.edu.FreightBid.model.Bid;
 import depaul.edu.FreightBid.model.BidRepository;
 import depaul.edu.FreightBid.model.Carrier;
 import depaul.edu.FreightBid.model.CarrierRepository;
+import depaul.edu.FreightBid.service.BidService;
 
 @Controller
 @RequestMapping("freightBid/bids")
@@ -26,12 +27,20 @@ public class BidController {
 	@Autowired
 	BidRepository bidRepo;
 	
+	@Autowired 
+	BidService bidService;
+	
 	@GetMapping
 	public String viewBids(Model model) {
 		model.addAttribute("bids",bidRepo.findAll());
 		return "bids/viewBids";
 		
+		//model.addAttribute("bids",bidService.getBids());
+		
+		//return "bids/viewBids";
 	}
+	
+	
 	
 	@RequestMapping(params = "addBid")
 	public String addBid(Model model) {
