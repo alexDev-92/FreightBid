@@ -65,10 +65,17 @@ public class BidController {
 		
 	}
 	
-	
-	
-	
-	
+	@PostMapping 
+	public String createBid2(@ModelAttribute("bid") Bid bid,Long carrierID, Long laneID ) {
+		
+		bidService.createBid(carrierID, laneID, bid);
+		
+		
+		
+		return null;
+				
+	}
+		
 	
 	
 
